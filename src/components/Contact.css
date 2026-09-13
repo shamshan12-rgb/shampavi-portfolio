@@ -1,0 +1,307 @@
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+   #contact .section-heading {
+    width: min(100%, 1060px);
+    max-width: 1060px;
+    margin: 0 auto 2rem;
+    box-sizing: border-box;
+  }
+  
+  #contact .section-heading h2 {
+    margin-bottom: 0.8rem;
+    font-size: 2rem;
+  }
+  
+  #contact .section-heading p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  /* =========================================================
+     CONTACT LAYOUT
+     ========================================================= */
+  
+  .contact-layout {
+    width: min(100%, 1060px);
+    max-width: 1060px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  /* =========================================================
+     CONTACT CARD
+     ========================================================= */
+  
+  .contact-card {
+    width: 100%;
+    box-sizing: border-box;
+  
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr);
+    gap: 25px;
+  
+    padding: 38px 40px;
+  
+    background: rgba(16, 28, 40, 0.88);
+    border: 1px solid rgba(90, 150, 170, 0.25);
+    border-radius: 20px;
+  
+    box-shadow:
+      0 15px 45px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  }
+  
+  /* =========================================================
+     EMAIL ICON
+     ========================================================= */
+  
+  .contact-icon {
+    width: 62px;
+    height: 62px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    border-radius: 50%;
+  
+    color: #00eaff;
+  
+    box-shadow:
+      0 0 18px rgba(0, 229, 255, 0.05);
+  }
+  
+  .contact-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+  
+  /* =========================================================
+     CONTACT CONTENT
+     ========================================================= */
+  
+  .contact-content {
+    min-width: 0;
+  }
+  
+  .contact-content h3 {
+    margin: 2px 0 10px;
+  
+    color: #f1f7f9;
+  
+    font-size: 1.45rem;
+    line-height: 1.3;
+  }
+  
+  .contact-content > p {
+    max-width: 850px;
+  
+    margin: 0 0 25px;
+  
+    color: rgba(213, 225, 230, 0.72);
+  
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  
+  /* =========================================================
+     CONTACT FORM
+     ========================================================= */
+  
+  .contact-form {
+    display: grid;
+    gap: 14px;
+    width: 100%;
+  }
+  
+  .contact-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+  
+    border: 1px solid rgba(100, 160, 180, 0.25);
+  
+    border-radius: 9px;
+  
+    background: rgba(7, 17, 27, 0.75);
+  
+    color: #eaf6f8;
+  
+    padding: 13px 15px;
+  
+    font-family: inherit;
+    font-size: 0.86rem;
+  
+    outline: none;
+  
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .contact-form input {
+    height: 52px;
+  }
+  
+  .contact-form textarea {
+    min-height: 125px;
+    resize: vertical;
+  }
+  
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: rgba(145, 180, 195, 0.65);
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: rgba(0, 229, 255, 0.55);
+  
+    box-shadow:
+      0 0 0 3px rgba(0, 229, 255, 0.06);
+  }
+  
+  /* =========================================================
+     SEND BUTTON
+     ========================================================= */
+  
+  .contact-send {
+    width: fit-content;
+  
+    margin-top: 2px;
+  
+    padding: 12px 25px;
+  
+    border: none;
+    border-radius: 8px;
+  
+    background: #20d8c2;
+    color: #031512;
+  
+    font-family: inherit;
+    font-size: 0.86rem;
+    font-weight: 700;
+  
+    cursor: pointer;
+  
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+  
+  .contact-send:hover {
+    transform: translateY(-2px);
+  
+    background: #2ce5cf;
+  
+    box-shadow:
+      0 8px 20px rgba(32, 216, 194, 0.2);
+  }
+  
+  /* =========================================================
+     SOCIAL BUTTONS
+     ========================================================= */
+  
+  .contact-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  
+    margin-top: 26px;
+  }
+  
+  .contact-actions a {
+    width: 52px;
+    height: 52px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    padding: 0;
+  
+    border: 1px solid rgba(100, 160, 180, 0.25);
+    border-radius: 50%;
+  
+    background: transparent;
+    color: #20d8c2;
+  
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+  
+  .contact-actions a:hover {
+    border-color: rgba(32, 216, 194, 0.65);
+  
+    background: rgba(32, 216, 194, 0.06);
+  
+    transform: translateY(-2px);
+  }
+  
+  .contact-actions svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 768px) {
+    #contact .section-heading,
+    .contact-layout {
+      width: 100%;
+    }
+  
+    .contact-card {
+      grid-template-columns: 1fr;
+      gap: 18px;
+  
+      padding: 28px 24px;
+    }
+  
+    .contact-icon {
+      width: 54px;
+      height: 54px;
+    }
+  
+    .contact-content h3 {
+      font-size: 1.3rem;
+    }
+  
+    .contact-form-row {
+      grid-template-columns: 1fr;
+    }
+  
+    .contact-send {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-card {
+      padding: 24px 18px;
+      border-radius: 16px;
+    }
+  
+    .contact-actions {
+      gap: 10px;
+    }
+  
+    .contact-actions a {
+      width: 46px;
+      height: 46px;
+    }
+  }

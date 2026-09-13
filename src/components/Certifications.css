@@ -1,0 +1,113 @@
+.certifications-heading {
+  margin: 0 0 2.4rem;
+  color: var(--accent);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem 1.45rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(46, 230, 197, 0.45);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+}
+
+.cert-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.cert-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #101820;
+  color: var(--accent);
+}
+
+.cert-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cert-result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.cert-result span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cert-result strong {
+  color: var(--accent);
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.cert-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.08rem;
+}
+
+.cert-institution {
+  margin: 0 0 0.85rem;
+  color: var(--accent);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.cert-description {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 860px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .cert-card {
+    padding: 1.15rem 1rem 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-card:hover {
+    transform: none;
+  }
+}

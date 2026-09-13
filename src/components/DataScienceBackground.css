@@ -1,0 +1,448 @@
+.data-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.75;
+  }
+  
+  /* Make sure the portfolio content stays above the background */
+  .app {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .site-header,
+  main,
+  .site-footer {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* =========================
+     DATA GRID
+  ========================= */
+  
+  .data-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(
+        rgba(46, 230, 197, 0.035) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(46, 230, 197, 0.035) 1px,
+        transparent 1px
+      );
+    background-size: 55px 55px;
+    mask-image: linear-gradient(
+      to bottom,
+      black,
+      transparent 85%
+    );
+  }
+  
+  /* =========================
+     NETWORK LINES
+  ========================= */
+  
+  .network {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(46, 230, 197, 0.3),
+      transparent
+    );
+    transform-origin: left center;
+  }
+  
+  .network-1 {
+    width: 480px;
+    top: 22%;
+    left: -80px;
+    transform: rotate(18deg);
+  }
+  
+  .network-2 {
+    width: 620px;
+    top: 55%;
+    right: -150px;
+    transform: rotate(-22deg);
+  }
+  
+  .network-3 {
+    width: 420px;
+    bottom: 18%;
+    left: 15%;
+    transform: rotate(-12deg);
+  }
+  
+  /* =========================
+     DATA DOTS
+  ========================= */
+  
+  .data-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow:
+      0 0 8px var(--accent),
+      0 0 18px rgba(46, 230, 197, 0.35);
+    animation: data-pulse 3s ease-in-out infinite;
+  }
+  
+  .dot-1 {
+    top: 18%;
+    left: 12%;
+  }
+  
+  .dot-2 {
+    top: 27%;
+    left: 31%;
+    animation-delay: 0.4s;
+  }
+  
+  .dot-3 {
+    top: 15%;
+    right: 24%;
+    animation-delay: 0.8s;
+  }
+  
+  .dot-4 {
+    top: 42%;
+    right: 12%;
+    animation-delay: 1.2s;
+  }
+  
+  .dot-5 {
+    top: 61%;
+    left: 8%;
+    animation-delay: 1.6s;
+  }
+  
+  .dot-6 {
+    top: 70%;
+    left: 36%;
+    animation-delay: 2s;
+  }
+  
+  .dot-7 {
+    top: 76%;
+    right: 22%;
+    animation-delay: 0.7s;
+  }
+  
+  .dot-8 {
+    top: 48%;
+    left: 48%;
+    animation-delay: 1.5s;
+  }
+  
+  .dot-9 {
+    top: 32%;
+    right: 42%;
+    animation-delay: 2.2s;
+  }
+  
+  .dot-10 {
+    bottom: 10%;
+    right: 8%;
+    animation-delay: 1s;
+  }
+  
+  @keyframes data-pulse {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(0.8);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  }
+  
+  /* =========================
+     DATA WAVES
+  ========================= */
+  
+  .data-wave {
+    position: absolute;
+    width: 75%;
+    height: 180px;
+    border-top: 1px solid rgba(46, 230, 197, 0.14);
+    border-radius: 50%;
+    transform: rotate(-8deg);
+  }
+  
+  .wave-1 {
+    left: -12%;
+    bottom: 8%;
+  }
+  
+  .wave-2 {
+    right: -15%;
+    top: 30%;
+    transform: rotate(12deg);
+  }
+  
+  /* =========================
+     DATA CHARTS
+  ========================= */
+  
+  .data-chart {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    gap: 7px;
+    width: 105px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid rgba(46, 230, 197, 0.12);
+    background: rgba(8, 15, 22, 0.18);
+    opacity: 0.5;
+  }
+  
+  .data-chart span {
+    display: block;
+    width: 9px;
+    border-radius: 2px 2px 0 0;
+    background: rgba(46, 230, 197, 0.35);
+  }
+  
+  .chart-1 {
+    top: 20%;
+    right: 6%;
+    transform: rotate(-4deg);
+  }
+  
+  .chart-1 span:nth-child(1) {
+    height: 25%;
+  }
+  
+  .chart-1 span:nth-child(2) {
+    height: 55%;
+  }
+  
+  .chart-1 span:nth-child(3) {
+    height: 40%;
+  }
+  
+  .chart-1 span:nth-child(4) {
+    height: 80%;
+  }
+  
+  .chart-1 span:nth-child(5) {
+    height: 65%;
+  }
+  
+  .chart-2 {
+    bottom: 15%;
+    left: 5%;
+    transform: rotate(5deg);
+  }
+  
+  .chart-2 span:nth-child(1) {
+    height: 65%;
+  }
+  
+  .chart-2 span:nth-child(2) {
+    height: 35%;
+  }
+  
+  .chart-2 span:nth-child(3) {
+    height: 75%;
+  }
+  
+  .chart-2 span:nth-child(4) {
+    height: 50%;
+  }
+  
+  .chart-2 span:nth-child(5) {
+    height: 90%;
+  }
+  
+  /* =========================
+     DATA RING
+  ========================= */
+  
+  .data-ring {
+    position: absolute;
+    top: 16%;
+    left: 7%;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    border: 1px solid rgba(46, 230, 197, 0.2);
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(
+        circle,
+        rgba(46, 230, 197, 0.08),
+        transparent 65%
+      );
+    box-shadow:
+      inset 0 0 25px rgba(46, 230, 197, 0.05),
+      0 0 25px rgba(46, 230, 197, 0.05);
+  }
+  
+  .data-ring::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: var(--accent);
+    border-right-color: rgba(46, 230, 197, 0.35);
+    transform: rotate(-35deg);
+  }
+  
+  .data-ring span {
+    position: relative;
+    z-index: 2;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+  
+  /* =========================
+     BINARY DATA
+  ========================= */
+  
+  .binary {
+    position: absolute;
+    color: rgba(46, 230, 197, 0.28);
+    font-family: monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    white-space: nowrap;
+    user-select: none;
+  }
+  
+  .binary-1 {
+    top: 12%;
+    right: 18%;
+  }
+  
+  .binary-2 {
+    top: 37%;
+    left: 4%;
+  }
+  
+  .binary-3 {
+    top: 58%;
+    right: 5%;
+  }
+  
+  .binary-4 {
+    bottom: 23%;
+    left: 25%;
+  }
+  
+  .binary-5 {
+    bottom: 8%;
+    right: 28%;
+  }
+  
+  /* =========================
+     PARTICLES
+  ========================= */
+  
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: rgba(46, 230, 197, 0.55);
+    animation: particle-float 6s ease-in-out infinite;
+  }
+  
+  .particle-1 {
+    top: 25%;
+    left: 45%;
+  }
+  
+  .particle-2 {
+    top: 35%;
+    left: 70%;
+    animation-delay: 1s;
+  }
+  
+  .particle-3 {
+    top: 65%;
+    left: 18%;
+    animation-delay: 2s;
+  }
+  
+  .particle-4 {
+    top: 78%;
+    left: 58%;
+    animation-delay: 3s;
+  }
+  
+  .particle-5 {
+    top: 45%;
+    right: 25%;
+    animation-delay: 1.5s;
+  }
+  
+  .particle-6 {
+    bottom: 18%;
+    right: 12%;
+    animation-delay: 2.5s;
+  }
+  
+  @keyframes particle-float {
+    0%,
+    100% {
+      opacity: 0.2;
+      transform: translateY(0);
+    }
+  
+    50% {
+      opacity: 0.8;
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* =========================
+     RESPONSIVE
+  ========================= */
+  
+  @media (max-width: 760px) {
+    .data-chart {
+      transform: scale(0.75);
+    }
+  
+    .data-ring {
+      width: 75px;
+      height: 75px;
+    }
+  
+    .binary {
+      font-size: 0.6rem;
+    }
+  
+    .network {
+      opacity: 0.5;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .data-dot,
+    .particle {
+      animation: none;
+    }
+  }

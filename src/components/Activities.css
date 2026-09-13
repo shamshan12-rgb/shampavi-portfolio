@@ -1,0 +1,146 @@
+.activities-section {
+  padding-top: 4.5rem;
+}
+
+.activities-container {
+  width: 100%;
+}
+
+.activities-timeline {
+  column-count: 2;
+  column-gap: 1.5rem;
+}
+
+.activity-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  margin: 0 0 1.5rem;
+
+  padding: 1.35rem;
+
+  background: rgba(16, 27, 38, 0.92);
+  border: 1px solid rgba(70, 100, 125, 0.38);
+  border-radius: 22px;
+
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.activity-card:hover {
+  border-color: rgba(46, 230, 197, 0.55);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Activity icon */
+
+.activity-number {
+  flex: 0 0 62px;
+
+  width: 62px;
+  height: 62px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(46, 230, 197, 0.28);
+  border-radius: 50%;
+
+  color: var(--accent);
+  font-size: 1.05rem;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(46, 230, 197, 0.08),
+      transparent 70%
+    );
+}
+
+/* Content */
+
+.activity-content {
+  min-width: 0;
+  padding-top: 0.1rem;
+}
+
+.activity-content h3 {
+  margin: 0 0 0.45rem;
+
+  color: var(--text-h);
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.activity-organization {
+  margin-bottom: 0.7rem;
+
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.activity-content p {
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .activities-timeline {
+    column-count: 1;
+  }
+
+  .activity-card {
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .activities-section {
+    padding-top: 3.25rem;
+  }
+
+  .activity-card {
+    gap: 0.9rem;
+    padding: 1.1rem;
+    border-radius: 18px;
+  }
+
+  .activity-number {
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    font-size: 0.95rem;
+  }
+
+  .activity-content h3 {
+    font-size: 1rem;
+  }
+
+  .activity-organization {
+    font-size: 0.82rem;
+  }
+
+  .activity-content p {
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
+}

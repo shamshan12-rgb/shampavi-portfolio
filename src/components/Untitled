@@ -1,0 +1,753 @@
+/* =========================================================
+   DATA SCIENCE FUTURISTIC BACKGROUND
+   ========================================================= */
+
+.data-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 229, 255, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(0, 255, 200, 0.06),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 90%,
+      rgba(0, 180, 255, 0.05),
+      transparent 35%
+    );
+}
+
+/* =========================================================
+   TECH GRID
+   ========================================================= */
+
+.data-grid {
+  position: absolute;
+  inset: -100px;
+  opacity: 0.22;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 220, 255, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 220, 255, 0.07) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  transform: perspective(700px) rotateX(60deg) scale(1.8);
+  transform-origin: center bottom;
+
+  animation: gridMove 18s linear infinite;
+}
+
+@keyframes gridMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 140px;
+  }
+}
+
+/* =========================================================
+   NETWORK LINES
+   ========================================================= */
+
+.network {
+  position: absolute;
+  height: 1px;
+  transform-origin: left center;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 238, 255, 0.7),
+    rgba(0, 238, 255, 0.2),
+    transparent
+  );
+
+  filter: drop-shadow(0 0 6px rgba(0, 238, 255, 0.5));
+
+  opacity: 0.5;
+}
+
+.network-1 {
+  width: 520px;
+  left: 3%;
+  top: 25%;
+  transform: rotate(18deg);
+
+  animation: networkPulse 5s ease-in-out infinite;
+}
+
+.network-2 {
+  width: 430px;
+  right: 4%;
+  top: 38%;
+  transform: rotate(-23deg);
+
+  animation: networkPulse 6s ease-in-out infinite reverse;
+}
+
+.network-3 {
+  width: 500px;
+  left: 25%;
+  bottom: 17%;
+  transform: rotate(-8deg);
+
+  animation: networkPulse 7s ease-in-out infinite;
+}
+
+@keyframes networkPulse {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.65;
+  }
+}
+
+/* =========================================================
+   DATA NODES
+   ========================================================= */
+
+.data-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #00eaff;
+
+  box-shadow:
+    0 0 8px rgba(0, 234, 255, 0.9),
+    0 0 20px rgba(0, 234, 255, 0.55),
+    0 0 35px rgba(0, 234, 255, 0.3);
+
+  animation: dotPulse 3s ease-in-out infinite;
+}
+
+.data-dot::after {
+  content: '';
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(0, 234, 255, 0.25);
+  border-radius: 50%;
+
+  animation: nodeRing 3s ease-out infinite;
+}
+
+.dot-1 {
+  left: 12%;
+  top: 22%;
+}
+
+.dot-2 {
+  left: 28%;
+  top: 34%;
+
+  animation-delay: 0.5s;
+}
+
+.dot-3 {
+  left: 42%;
+  top: 18%;
+
+  animation-delay: 1s;
+}
+
+.dot-4 {
+  left: 61%;
+  top: 27%;
+
+  animation-delay: 1.5s;
+}
+
+.dot-5 {
+  left: 78%;
+  top: 20%;
+
+  animation-delay: 0.8s;
+}
+
+.dot-6 {
+  left: 88%;
+  top: 48%;
+
+  animation-delay: 1.2s;
+}
+
+.dot-7 {
+  left: 70%;
+  top: 65%;
+
+  animation-delay: 1.8s;
+}
+
+.dot-8 {
+  left: 50%;
+  top: 76%;
+
+  animation-delay: 0.3s;
+}
+
+.dot-9 {
+  left: 24%;
+  top: 72%;
+
+  animation-delay: 1.4s;
+}
+
+.dot-10 {
+  left: 8%;
+  top: 55%;
+
+  animation-delay: 2s;
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+@keyframes nodeRing {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   FLOWING DATA WAVES
+   ========================================================= */
+
+.data-wave {
+  position: absolute;
+
+  width: 70%;
+  height: 150px;
+
+  border-top: 1px solid rgba(0, 229, 255, 0.25);
+  border-radius: 50%;
+
+  filter: blur(0.2px);
+
+  opacity: 0.35;
+}
+
+.wave-1 {
+  left: -10%;
+  bottom: 23%;
+
+  transform: rotate(-7deg);
+
+  box-shadow:
+    0 -15px 25px rgba(0, 229, 255, 0.08);
+
+  animation: waveMove 9s ease-in-out infinite;
+}
+
+.wave-2 {
+  right: -15%;
+  bottom: 12%;
+
+  transform: rotate(8deg);
+
+  opacity: 0.22;
+
+  animation: waveMoveReverse 11s ease-in-out infinite;
+}
+
+@keyframes waveMove {
+  0%,
+  100% {
+    transform: translateX(0) rotate(-7deg);
+  }
+
+  50% {
+    transform: translateX(80px) rotate(-4deg);
+  }
+}
+
+@keyframes waveMoveReverse {
+  0%,
+  100% {
+    transform: translateX(0) rotate(8deg);
+  }
+
+  50% {
+    transform: translateX(-80px) rotate(5deg);
+  }
+}
+
+/* =========================================================
+   DATA CHARTS
+   ========================================================= */
+
+.data-chart {
+  position: absolute;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 7px;
+
+  width: 130px;
+  height: 75px;
+
+  padding: 10px;
+
+  border:
+    1px solid rgba(0, 229, 255, 0.15);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 229, 255, 0.06),
+      rgba(0, 229, 255, 0.01)
+    );
+
+  backdrop-filter: blur(3px);
+
+  border-radius: 8px;
+
+  opacity: 0.4;
+
+  box-shadow:
+    0 0 25px rgba(0, 229, 255, 0.04);
+
+  animation: chartFloat 8s ease-in-out infinite;
+}
+
+.data-chart span {
+  display: block;
+
+  width: 13px;
+
+  border-radius: 2px 2px 0 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 229, 255, 0.25),
+      rgba(0, 229, 255, 0.7)
+    );
+
+  box-shadow:
+    0 0 8px rgba(0, 229, 255, 0.2);
+}
+
+.chart-1 {
+  left: 6%;
+  top: 63%;
+}
+
+.chart-1 span:nth-child(1) {
+  height: 25%;
+}
+
+.chart-1 span:nth-child(2) {
+  height: 48%;
+}
+
+.chart-1 span:nth-child(3) {
+  height: 35%;
+}
+
+.chart-1 span:nth-child(4) {
+  height: 70%;
+}
+
+.chart-1 span:nth-child(5) {
+  height: 55%;
+}
+
+.chart-2 {
+  right: 7%;
+  top: 70%;
+
+  animation-delay: 2s;
+}
+
+.chart-2 span:nth-child(1) {
+  height: 60%;
+}
+
+.chart-2 span:nth-child(2) {
+  height: 35%;
+}
+
+.chart-2 span:nth-child(3) {
+  height: 75%;
+}
+
+.chart-2 span:nth-child(4) {
+  height: 45%;
+}
+
+.chart-2 span:nth-child(5) {
+  height: 85%;
+}
+
+@keyframes chartFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* =========================================================
+   DATA RING
+   ========================================================= */
+
+.data-ring {
+  position: absolute;
+
+  right: 15%;
+  top: 17%;
+
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(0, 229, 255, 0.2);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 229, 255, 0.08),
+      transparent 65%
+    );
+
+  color: rgba(0, 234, 255, 0.75);
+
+  font-family: monospace;
+  font-size: 14px;
+
+  box-shadow:
+    0 0 30px rgba(0, 229, 255, 0.08);
+
+  animation: ringRotate 15s linear infinite;
+}
+
+.data-ring::before {
+  content: '';
+
+  position: absolute;
+  inset: 8px;
+
+  border-radius: 50%;
+
+  border:
+    2px dashed rgba(0, 229, 255, 0.4);
+
+  animation: ringSpin 8s linear infinite reverse;
+}
+
+.data-ring::after {
+  content: '';
+
+  position: absolute;
+  inset: -8px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(0, 229, 255, 0.12);
+}
+
+@keyframes ringRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ringSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   BINARY / CODE ELEMENTS
+   ========================================================= */
+
+.binary {
+  position: absolute;
+
+  color: rgba(0, 229, 255, 0.22);
+
+  font-family: 'Courier New', monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 0 8px rgba(0, 229, 255, 0.25);
+
+  animation: binaryFloat 7s ease-in-out infinite;
+}
+
+.binary-1 {
+  left: 8%;
+  top: 39%;
+}
+
+.binary-2 {
+  left: 35%;
+  top: 12%;
+
+  animation-delay: 1s;
+}
+
+.binary-3 {
+  right: 32%;
+  top: 46%;
+
+  animation-delay: 2s;
+}
+
+.binary-4 {
+  right: 8%;
+  top: 58%;
+
+  animation-delay: 3s;
+}
+
+.binary-5 {
+  left: 42%;
+  bottom: 9%;
+
+  animation-delay: 1.5s;
+}
+
+@keyframes binaryFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.45;
+  }
+}
+
+/* =========================================================
+   FLOATING PARTICLES
+   ========================================================= */
+
+.particle {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 229, 255, 0.65);
+
+  box-shadow:
+    0 0 8px rgba(0, 229, 255, 0.7);
+
+  animation: particleFloat 10s linear infinite;
+}
+
+.particle-1 {
+  left: 15%;
+  top: 10%;
+}
+
+.particle-2 {
+  left: 48%;
+  top: 8%;
+
+  animation-delay: 2s;
+}
+
+.particle-3 {
+  right: 18%;
+  top: 13%;
+
+  animation-delay: 4s;
+}
+
+.particle-4 {
+  left: 82%;
+  top: 72%;
+
+  animation-delay: 1s;
+}
+
+.particle-5 {
+  left: 38%;
+  bottom: 20%;
+
+  animation-delay: 5s;
+}
+
+.particle-6 {
+  left: 5%;
+  bottom: 12%;
+
+  animation-delay: 3s;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.7;
+  }
+
+  80% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   KEEP PORTFOLIO CONTENT ABOVE BACKGROUND
+   ========================================================= */
+
+.app {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header,
+main,
+footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .data-grid {
+    opacity: 0.12;
+    background-size: 50px 50px;
+  }
+
+  .network {
+    opacity: 0.2;
+  }
+
+  .data-chart {
+    transform: scale(0.75);
+    opacity: 0.22;
+  }
+
+  .chart-1 {
+    left: -25px;
+  }
+
+  .chart-2 {
+    right: -25px;
+  }
+
+  .data-ring {
+    width: 65px;
+    height: 65px;
+
+    right: 8%;
+    top: 15%;
+
+    font-size: 11px;
+  }
+
+  .binary {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .data-wave {
+    opacity: 0.15;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .data-grid,
+  .network,
+  .data-dot,
+  .data-dot::after,
+  .data-wave,
+  .data-chart,
+  .data-ring,
+  .data-ring::before,
+  .binary,
+  .particle {
+    animation: none;
+  }
+}
