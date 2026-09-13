@@ -40,17 +40,14 @@ function DataIcon() {
 function Hero() {
   return (
     <section id="home" className="section hero">
-
       <div className="hero-copy">
-
         <div className="hero-status">
           <span className="status-dot"></span>
+
           <span>AVAILABLE FOR OPPORTUNITIES</span>
         </div>
 
-        <p className="eyebrow">
-          Portfolio / 2026
-        </p>
+        <p className="eyebrow">Portfolio / 2026</p>
 
         <h1>
           {site.name}
@@ -78,36 +75,29 @@ function Hero() {
             </strong>
           </div>
         </div>
-
       </div>
 
-      <div className="hero-visual">
-
-        {/* PROFILE PHOTO */}
-        <div className="hero-photo-frame">
-          <div className="hero-photo-glow"></div>
-
-          <div className="hero-photo-border">
-            <img
-              src="/profile.jpeg"
-              alt="Shampavi"
-              className="hero-profile-photo"
-            />
-          </div>
-        </div>
-
-        {/* FUTURISTIC ORBITS */}
+      <div className="hero-visual" aria-hidden="true">
         <div className="hero-orbit orbit-one"></div>
         <div className="hero-orbit orbit-two"></div>
         <div className="hero-orbit orbit-three"></div>
 
-        {/* DATA NODES */}
+        <div className="hero-core">
+          <div className="core-ring"></div>
+
+          <div className="hero-photo">
+            <img
+              src={`${import.meta.env.BASE_URL}profile.jpeg`}
+              alt="Shampavi"
+            />
+          </div>
+        </div>
+
         <div className="hero-node node-a"></div>
         <div className="hero-node node-b"></div>
         <div className="hero-node node-c"></div>
         <div className="hero-node node-d"></div>
 
-        {/* DATA LABELS */}
         <div className="hero-code code-one">
           01 10 01
         </div>
@@ -124,7 +114,6 @@ function Hero() {
           ANALYTICS
         </div>
 
-        {/* MINI CHART */}
         <div className="hero-mini-chart">
           <span></span>
           <span></span>
@@ -133,9 +122,7 @@ function Hero() {
           <span></span>
           <span></span>
         </div>
-
       </div>
-
     </section>
   )
 }
