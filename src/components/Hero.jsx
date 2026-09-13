@@ -43,7 +43,6 @@ function Hero() {
       <div className="hero-copy">
         <div className="hero-status">
           <span className="status-dot"></span>
-
           <span>AVAILABLE FOR OPPORTUNITIES</span>
         </div>
 
@@ -56,10 +55,6 @@ function Hero() {
 
         <p className="headline">
           {site.headline}
-        </p>
-
-        <p className="lede">
-          {site.intro}
         </p>
 
         <div className="hero-data-line">

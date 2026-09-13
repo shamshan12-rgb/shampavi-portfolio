@@ -39,9 +39,7 @@ function DataScienceBackground() {
         <span></span>
       </div>
 
-      <div className="data-ring">
-        <span>75%</span>
-      </div>
+     
 
       <span className="binary binary-1">0101</span>
       <span className="binary binary-2">1100</span>
