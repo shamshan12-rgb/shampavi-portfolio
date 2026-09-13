@@ -1,6 +1,4 @@
 import Section from './Section.jsx'
-import Button from './Button.jsx'
-import { site } from '../data/site.js'
 
 function About() {
   return (
@@ -41,16 +39,6 @@ function About() {
             opportunities where mathematics, computing, and data science can be
             applied to solve real-world problems.
           </p>
-
-          <div className="hero-actions">
-            <Button
-              href={site.email ? `mailto:${site.email}` : undefined}
-              variant="secondary"
-              disabled={!site.email}
-            >
-              Email
-            </Button>
-          </div>
         </div>
       </div>
     </Section>
