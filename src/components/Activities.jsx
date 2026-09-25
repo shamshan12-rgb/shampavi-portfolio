@@ -1,3 +1,4 @@
+import { revealDelay } from '../lib/reveal.js';
 import './Activities.css';
 
 const activities = [
@@ -20,7 +21,7 @@ const activities = [
     role: 'USBUS Project Volunteer',
     organization: 'University of Vavuniya',
     description:
-      'Participated in student engagement initiatives and project activities.',
+      'Volunteered for the USBUS – Mobile American Spaces program at the University of Vavuniya, where I shared experiences and skills gained through my Youth Forum journey. Engaged with students through interactive games, conversations, and activities, creating opportunities for meaningful connections and knowledge sharing.',
   },
   
     {
@@ -40,17 +41,19 @@ const activities = [
   },
   {
     number: '06',
-    role: 'Program Coordinator',
-    organization: 'Blue Focus Project • University of Vavuniya',
-    description:
-      'Coordinated program activities and supported planning and execution.',
-  },
-  {
-    number: '07',
     role: 'Zero Plastic Initiative — Volunteer',
     organization: 'University of Vavuniya',
     description:
       'Participated in environmental sustainability activities focused on plastic reduction and awareness.',
+    roles: [
+      {
+        role: 'Program Coordinator',
+        organization: 'Blue Focus Project',
+        institution: 'University of Vavuniya',
+        description:
+          'Coordinated program activities and supported planning and execution.',
+      },
+    ],
   },
   {
     number: '08',
@@ -63,9 +66,9 @@ const activities = [
 
 function Activities() {
   return (
-    <section id="activities" className="activities-section">
+    <section id="activities" className="section activities-section">
       <div className="activities-container">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <span className="section-label">EXPERIENCE & INVOLVEMENT</span>
           <h2>Activities & Leadership</h2>
           <p>
@@ -75,8 +78,13 @@ function Activities() {
         </div>
 
         <div className="activities-timeline">
-          {activities.map((activity) => (
-            <article className="activity-card" key={activity.number}>
+          {activities.map((activity, index) => (
+            <article
+              className="activity-card"
+              key={activity.number}
+              data-reveal
+              style={revealDelay(index)}
+            >
               <div className="activity-number">✦</div>
 
               <div className="activity-content">
@@ -84,7 +92,25 @@ function Activities() {
                 <div className="activity-organization">
                   {activity.organization}
                 </div>
+                {activity.institution && (
+                  <div className="activity-organization">
+                    {activity.institution}
+                  </div>
+                )}
                 <p>{activity.description}</p>
+
+                {activity.roles?.map((role) => (
+                  <div className="activity-role" key={role.role}>
+                    <h4>{role.role}</h4>
+                    <div className="activity-organization">
+                      {role.organization}
+                    </div>
+                    <div className="activity-organization">
+                      {role.institution}
+                    </div>
+                    <p>{role.description}</p>
+                  </div>
+                ))}
               </div>
             </article>
           ))}

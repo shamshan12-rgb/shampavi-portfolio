@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/shampavi-portfolio/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Page Not Found | Shampavi Shanmugarajah</title>
+
+    <!-- GitHub Pages serves this file for any path it cannot match, so it is
+         standalone: it carries the handful of theme tokens it needs rather
+         than the hashed app stylesheet, whose name changes every build. The
+         values are copied from src/index.css. -->
+    <style>
+      :root,
+      :root[data-theme='dark'] {
+        color-scheme: dark;
+        --bg: #0b1118;
+        --card-glass: rgba(16, 27, 38, 0.9);
+        --border-glass-strong: rgba(90, 150, 170, 0.25);
+        --text: #c5d0db;
+        --text-h: #f4f8fb;
+        --muted: #8b99a8;
+        --accent: #2ee6c5;
+        --accent-strong: #1ec8b0;
+        --accent-glow: rgba(46, 230, 197, 0.22);
+        --on-accent: #06221c;
+      }
+
+      :root[data-theme='light'] {
+        color-scheme: light;
+        --bg: #f5f8fa;
+        --card-glass: rgba(255, 255, 255, 0.88);
+        --border-glass-strong: rgba(24, 74, 96, 0.2);
+        --text: #41505e;
+        --text-h: #0d1b26;
+        --muted: #5d6c7b;
+        --accent: #0c7a6f;
+        --accent-strong: #0a6a60;
+        --accent-glow: rgba(12, 122, 111, 0.1);
+        --on-accent: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+
+        display: grid;
+        place-items: center;
+
+        padding: 1.5rem;
+
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        line-height: 1.65;
+        color: var(--text);
+
+        background:
+          radial-gradient(
+            ellipse 70% 40% at 50% -8%,
+            var(--accent-glow),
+            transparent 58%
+          ),
+          var(--bg);
+
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .not-found {
+        width: 100%;
+        max-width: 30rem;
+
+        padding: 2.5rem 1.75rem;
+
+        text-align: center;
+
+        background: var(--card-glass);
+        border: 1px solid var(--border-glass-strong);
+        border-radius: 22px;
+      }
+
+      .not-found p.not-found-code {
+        margin: 0;
+
+        color: var(--accent);
+        font-size: clamp(3rem, 12vw, 4.5rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .not-found h1 {
+        margin: 0.35rem 0 0.75rem;
+
+        color: var(--text-h);
+        font-size: clamp(1.25rem, 5vw, 1.6rem);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      .not-found p {
+        margin: 0 0 1.75rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .not-found a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 44px;
+        padding: 0.55rem 1.1rem;
+
+        border: 1px solid transparent;
+        border-radius: 999px;
+
+        background: var(--accent);
+        color: var(--on-accent);
+
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .not-found a:hover {
+        background: var(--accent-strong);
+        transform: translateY(-1px);
+      }
+
+      :root a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+
+    <!-- Same theme resolution as index.html, so a visitor who landed here
+         keeps the mode they chose on the portfolio. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var prefersLight = window.matchMedia(
+            '(prefers-color-scheme: light)'
+          ).matches
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : prefersLight
+                ? 'light'
+                : 'dark'
+          document.documentElement.dataset.theme = theme
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark'
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <main class="not-found">
+      <p class="not-found-code">404</p>
+      <h1>Page Not Found</h1>
+      <p>
+        The page you're looking for doesn't exist or may have been moved.
+      </p>
+      <a href="/shampavi-portfolio/">Back to Home</a>
+    </main>
+  </body>
+</html>

@@ -6,9 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Personal portfolio of Shampavi, BSc Applied Mathematics and Computing student at the University of Vavuniya."
+      content="IT undergraduate passionate about full-stack development, AI, data, and modern software technologies."
     />
-    <title>Shampavi | Portfolio</title>
+    <title>Shampavi Shanmugarajah | IT Undergraduate &amp; Developer</title>
+
+    <!-- Social share cards. Absolute URLs: crawlers do not resolve relative
+         paths, and the GitHub Pages project path is part of the origin here.
+         Keep in step with `base` in vite.config.js. -->
+    <link rel="canonical" href="https://shamshan12-rgb.github.io/shampavi-portfolio/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shamshan12-rgb.github.io/shampavi-portfolio/" />
+    <meta
+      property="og:title"
+      content="Shampavi Shanmugarajah | IT Undergraduate &amp; Developer"
+    />
+    <meta
+      property="og:description"
+      content="IT undergraduate passionate about full-stack development, AI, data, and modern software technologies."
+    />
+    <meta
+      property="og:image"
+      content="https://shamshan12-rgb.github.io/shampavi-portfolio/profile.jpeg"
+    />
+    <meta property="og:image:alt" content="Shampavi Shanmugarajah" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Shampavi Shanmugarajah | IT Undergraduate &amp; Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="IT undergraduate passionate about full-stack development, AI, data, and modern software technologies."
+    />
+    <meta
+      name="twitter:image"
+      content="https://shamshan12-rgb.github.io/shampavi-portfolio/profile.jpeg"
+    />
+
+    <!-- Resolve the theme before the stylesheet paints so the page never
+         flashes the wrong one. Kept in sync by src/hooks/useTheme.js. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var prefersLight = window.matchMedia(
+            '(prefers-color-scheme: light)'
+          ).matches
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : prefersLight
+                ? 'light'
+                : 'dark'
+          document.documentElement.dataset.theme = theme
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark'
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,79 @@
+/* =========================================================
+   BACK TO TOP
+
+   Borrows the theme toggle's glass-pill treatment so it reads as part of
+   the same control set, and sits under the header (z-index 100) and the
+   mobile menu (90) so it can never cover either.
+   ========================================================= */
+
+.back-to-top {
+  position: fixed;
+  right: var(--gutter);
+  /* Clears the home bar / browser chrome on phones. */
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  z-index: 80;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 44px: the minimum comfortable touch target, and the same size the
+     header's theme toggle uses. */
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: 1px solid var(--border-glass-strong);
+  border-radius: 50%;
+
+  background: var(--surface-translucent);
+  color: var(--accent);
+
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 22px rgba(var(--shadow-rgb), 0.18);
+
+  cursor: pointer;
+
+  /* `visibility` (not `display`) keeps it out of the tab order while
+     hidden without losing the fade. */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.back-to-top:hover {
+  border-color: rgba(var(--accent-rgb), 0.5);
+  background: rgba(var(--accent-rgb), 0.08);
+}
+
+.back-to-top svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+@media (max-width: 600px) {
+  .back-to-top {
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .back-to-top svg {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
+  }
+}

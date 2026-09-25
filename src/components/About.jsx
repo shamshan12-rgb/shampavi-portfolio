@@ -4,7 +4,7 @@ function About() {
   return (
     <Section id="about" eyebrow="About" title="About Me">
       <div className="about-grid">
-        <div className="about-copy">
+        <div className="about-copy" data-reveal style={{ '--reveal-delay': '80ms' }}>
           <p>
             I&apos;m Shampavi, a second-year BSc Applied Mathematics and
             Computing undergraduate at the University of Vavuniya, with an

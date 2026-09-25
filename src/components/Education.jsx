@@ -1,3 +1,4 @@
+import { revealDelay } from '../lib/reveal.js'
 import './Education.css'
 
 function CapIcon() {
@@ -42,6 +43,7 @@ const education = [
     institution: "Vembadi Girls' High School, Jaffna",
     qualification: 'G.C.E. Advanced Level — Physical Science Stream',
     dates: '2023',
+    zScore: '0.8788',
     results: [
       { subject: 'Combined Mathematics', grade: 'B' },
       { subject: 'Chemistry', grade: 'C' },
@@ -70,16 +72,18 @@ const education = [
 function Education() {
   return (
     <section id="education" className="section education-section">
-      <h2 className="education-heading">Education</h2>
+      <h2 className="education-heading" data-reveal>Education</h2>
 
       <ol className="education-timeline">
-        {education.map((item) => {
+        {education.map((item, index) => {
           const Icon = item.icon
 
           return (
             <li
               key={`${item.institution}-${item.qualification}`}
               className={`edu-card${item.featured ? ' is-featured' : ''}`}
+              data-reveal
+              style={revealDelay(index)}
             >
               <span className="edu-marker" aria-hidden="true">
                 <Icon />
@@ -92,6 +96,7 @@ function Education() {
                 <div className="edu-meta">
                   {item.dates ? <span>{item.dates}</span> : null}
                   {item.status ? <span className="edu-status">{item.status}</span> : null}
+                  {item.zScore ? <span>Z-Score: {item.zScore}</span> : null}
                 </div>
 
                 {item.coursework ? (

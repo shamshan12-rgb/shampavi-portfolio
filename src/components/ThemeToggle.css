@@ -1,0 +1,121 @@
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  flex: 0 0 auto;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: 1px solid var(--border-glass-strong);
+  border-radius: 10px;
+
+  background: var(--surface-translucent);
+  color: var(--accent);
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: rgba(var(--accent-rgb), 0.5);
+  background: rgba(var(--accent-rgb), 0.08);
+  transform: translateY(-1px);
+}
+
+.theme-toggle-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+
+  transition: transform 0.35s ease;
+}
+
+.theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(12deg);
+}
+
+/* Icon-only in the header bar; the wording is carried by the aria-label. */
+.theme-toggle-label {
+  display: none;
+}
+
+/* =========================================================
+   MOBILE MENU VARIANT
+
+   Sits in the link list, so it matches the links: full width,
+   left aligned, and labelled in words.
+   ========================================================= */
+
+.theme-toggle-inline {
+  width: 100%;
+  min-height: 48px;
+  height: auto;
+
+  justify-content: flex-start;
+
+  margin-top: 6px;
+  padding: 0 6px;
+
+  border: 0;
+  border-top: 1px solid var(--border-glass-soft);
+  border-radius: 0;
+
+  background: transparent;
+  color: var(--nav-link);
+
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.theme-toggle-inline:hover {
+  transform: none;
+  background: rgba(var(--accent-rgb), 0.07);
+  border-color: var(--border-glass-soft);
+  color: var(--accent);
+}
+
+.theme-toggle-inline .theme-toggle-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  color: var(--accent);
+}
+
+.theme-toggle-inline .theme-toggle-label {
+  display: inline;
+}
+
+/* Below the desktop nav breakpoint the header variant steps aside: the
+   toggle lives in the mobile menu panel instead. */
+@media (max-width: 900px) {
+  .theme-toggle-header {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .theme-toggle-inline {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle:hover,
+  .theme-toggle:hover .theme-toggle-icon {
+    transform: none;
+  }
+}

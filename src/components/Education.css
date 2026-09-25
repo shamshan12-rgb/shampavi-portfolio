@@ -44,14 +44,14 @@
 
 .edu-card:hover article {
   transform: translateY(-3px);
-  border-color: rgba(46, 230, 197, 0.45);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+  border-color: rgba(var(--accent-rgb), 0.45);
+  box-shadow: 0 8px 18px rgba(var(--shadow-rgb), 0.28);
 }
 
 .edu-card.is-featured article {
-  border-color: rgba(46, 230, 197, 0.38);
+  border-color: rgba(var(--accent-rgb), 0.38);
   background:
-    linear-gradient(180deg, rgba(46, 230, 197, 0.07), transparent 42%),
+    linear-gradient(180deg, rgba(var(--accent-rgb), 0.07), transparent 42%),
     var(--bg-elevated);
   box-shadow: 0 0 0 1px var(--accent-soft);
 }
@@ -66,7 +66,7 @@
   margin-top: 1.15rem;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: #101820;
+  background: var(--surface-inset);
   color: var(--accent);
 }
 
@@ -133,14 +133,17 @@
   padding: 0.35rem 0.7rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(46, 230, 197, 0.06);
+  background: rgba(var(--accent-rgb), 0.06);
   color: var(--text-h);
   font-size: 0.86rem;
 }
 
+/* Track count follows the card width, so the grade never ends up floating
+   half a card away from its subject on wide screens. */
 .edu-results {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: 0.45rem 0.8rem;
   margin: 0;
   padding: 0;
@@ -154,7 +157,7 @@
   padding: 0.45rem 0.65rem;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: rgba(16, 24, 32, 0.7);
+  background: var(--surface-translucent);
   color: var(--text);
   font-size: 0.88rem;
 }

@@ -1,19 +1,119 @@
-:root {
+/* =========================================================
+   THEME TOKENS
+
+   Every colour the site paints with is declared here, twice:
+   `:root` holds the dark theme (the portfolio's original look)
+   and `:root[data-theme='light']` overrides the same names with
+   light values. Components only ever reference the tokens, so a
+   theme switch is a variable swap rather than a second stylesheet.
+
+   `<html data-theme>` is stamped by the inline boot script in
+   index.html before first paint, and kept in sync by useTheme.js.
+   ========================================================= */
+
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Surfaces */
   --bg: #0b1118;
   --bg-elevated: #121a24;
+  --surface-inset: #101820;
+  --surface-solid: #070f16;
+  --surface-translucent: rgba(16, 28, 40, 0.8);
+  --card-glass: rgba(16, 27, 38, 0.9);
+  --glass: rgba(7, 15, 22, 0.92);
+  /* Bare channels, for the translucent decorative panels that need
+     their own alpha (hero chips, mini charts, core gradient). */
+  --glass-rgb: 8, 15, 22;
+  --field-bg: rgba(7, 17, 27, 0.75);
+  --inset-highlight: rgba(255, 255, 255, 0.04);
+
+  /* Text */
   --text: #c5d0db;
   --text-h: #f4f8fb;
   --muted: #8b99a8;
+  --nav-link: rgba(205, 220, 226, 0.78);
+  --placeholder: rgba(145, 180, 195, 0.65);
+
+  /* Borders */
   --border: #1e2a38;
+  --border-glass-soft: rgba(90, 150, 170, 0.12);
+  --border-glass: rgba(90, 150, 170, 0.18);
+  --border-glass-strong: rgba(90, 150, 170, 0.25);
+
+  /* Accents: emerald/cyan primary, sky-blue secondary */
   --accent: #2ee6c5;
+  --accent-rgb: 46, 230, 197;
   --accent-strong: #1ec8b0;
   --accent-soft: rgba(46, 230, 197, 0.12);
   --accent-glow: rgba(46, 230, 197, 0.22);
-  --header-h: 72px;
+  --on-accent: #06221c;
+  --accent-2: #00eaff;
+  --accent-2-rgb: 0, 229, 255;
+
+  /* The floating hero code chips sit on a translucent panel, so they
+     get their own dimmed accent rather than the full-strength one. */
+  --code-chip-text: rgba(46, 230, 197, 0.72);
+
+  /* Depth */
+  --shadow-rgb: 0, 0, 0;
+  --decor-opacity: 0.75;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #f5f8fa;
+  --bg-elevated: #ffffff;
+  --surface-inset: #eef3f7;
+  --surface-solid: #ffffff;
+  --surface-translucent: rgba(255, 255, 255, 0.85);
+  --card-glass: rgba(255, 255, 255, 0.88);
+  --glass: rgba(255, 255, 255, 0.9);
+  --glass-rgb: 255, 255, 255;
+  --field-bg: rgba(255, 255, 255, 0.95);
+  --inset-highlight: rgba(11, 45, 62, 0.04);
+
+  --text: #41505e;
+  --text-h: #0d1b26;
+  --muted: #5d6c7b;
+  --nav-link: #45566a;
+  --placeholder: rgba(69, 86, 106, 0.6);
+
+  --border: #d8e1e8;
+  --border-glass-soft: rgba(24, 74, 96, 0.1);
+  --border-glass: rgba(24, 74, 96, 0.14);
+  --border-glass-strong: rgba(24, 74, 96, 0.2);
+
+  /* Same hues, darkened until they clear 4.5:1 against white. */
+  --accent: #0c7a6f;
+  --accent-rgb: 12, 122, 111;
+  --accent-strong: #0a6a60;
+  --accent-soft: rgba(12, 122, 111, 0.1);
+  --accent-glow: rgba(12, 122, 111, 0.1);
+  --on-accent: #ffffff;
+  --accent-2: #0d6f8c;
+  --accent-2-rgb: 13, 111, 140;
+
+  --code-chip-text: var(--accent);
+
+  --shadow-rgb: 15, 45, 70;
+  --decor-opacity: 0.5;
+}
+
+/* =========================================================
+   LAYOUT TOKENS + BASE
+   ========================================================= */
+
+:root {
+  --header-h: 73px;
+  --content-max: 1120px;
+  --gutter: 1.5rem;
+  --section-gap: 4.5rem;
   --sans: 'Segoe UI', system-ui, sans-serif;
   --radius: 16px;
 
-  color-scheme: dark;
   font-family: var(--sans);
   line-height: 1.65;
   font-weight: 400;
@@ -42,6 +142,22 @@ body,
 
 body {
   margin: 0;
+  width: 100%;
+  /* `clip` (not `hidden`) so decorative overflow never scrolls the page
+     while `position: sticky` on the header keeps working. */
+  overflow-x: clip;
+}
+
+/* Long unbroken strings (URLs, labels) must never widen a container. */
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+span,
+a {
+  overflow-wrap: break-word;
 }
 
 img {
@@ -92,7 +208,7 @@ p:last-child {
   top: -40px;
   z-index: 100;
   background: var(--accent);
-  color: #06221c;
+  color: var(--on-accent);
   padding: 0.5rem 0.85rem;
   border-radius: 8px;
   font-weight: 600;
@@ -100,6 +216,53 @@ p:last-child {
 
 .skip-link:focus {
   top: 0.75rem;
+}
+
+/* A single, consistent focus ring for every interactive element. The
+   `:root` prefix keeps it ahead of component rules that zero the
+   outline out (the contact inputs), without touching border radii. */
+:root :is(a, button, input, textarea):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   THEME CROSS-FADE
+
+   Only active for the ~350ms around a switch (useTheme adds the
+   class, then removes it), so it can never interfere with the
+   hover/transform transitions components declare for themselves.
+   ========================================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition:
+      background-color 0.35s ease,
+      background-image 0.35s ease,
+      border-color 0.35s ease,
+      color 0.35s ease,
+      fill 0.35s ease,
+      box-shadow 0.35s ease !important;
+  }
+}
+
+/* Layout tokens scale with the viewport so every component that consumes
+   them (header, main, footer, section spacing) stays in step. */
+@media (max-width: 640px) {
+  :root {
+    --header-h: 63px;
+    --gutter: 1rem;
+    --section-gap: 3.25rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --content-max: 1280px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

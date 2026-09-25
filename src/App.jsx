@@ -9,9 +9,13 @@ import Projects from './components/Projects.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import DataScienceBackground from './components/DataScienceBackground.jsx'
+import BackToTop from './components/BackToTop.jsx'
+import useScrollReveal from './hooks/useScrollReveal.js'
 import './App.css'
 
 function App() {
+  useScrollReveal()
+
   return (
     <div className="app">
       <DataScienceBackground />
@@ -26,14 +30,16 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <Projects />
         <Education />
         <Certifications />
         <Activities />
-        <Projects />
         <Contact />
       </main>
 
       <Footer />
+
+      <BackToTop />
     </div>
   )
 }

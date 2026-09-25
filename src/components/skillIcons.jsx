@@ -100,9 +100,9 @@ export function MysqlIcon() {
 export function StatisticsIcon() {
   return (
     <Icon>
-      <rect fill="#2EE6C5" x="4" y="13" width="3.2" height="7" rx="0.6" />
-      <rect fill="#7FF0DC" x="10.4" y="8" width="3.2" height="12" rx="0.6" />
-      <rect fill="#2EE6C5" x="16.8" y="4" width="3.2" height="16" rx="0.6" />
+      <rect className="icon-accent" fill="currentColor" x="4" y="13" width="3.2" height="7" rx="0.6" />
+      <rect className="icon-accent-soft" fill="currentColor" x="10.4" y="8" width="3.2" height="12" rx="0.6" />
+      <rect className="icon-accent" fill="currentColor" x="16.8" y="4" width="3.2" height="16" rx="0.6" />
     </Icon>
   )
 }
@@ -111,14 +111,15 @@ export function AnalyticsIcon() {
   return (
     <Icon>
       <path
+        className="icon-accent"
         fill="none"
-        stroke="#2EE6C5"
+        stroke="currentColor"
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M4 16.5 9 11l3.5 3.5L20 7"
       />
-      <circle fill="#2EE6C5" cx="20" cy="7" r="1.4" />
+      <circle className="icon-accent" fill="currentColor" cx="20" cy="7" r="1.4" />
     </Icon>
   )
 }
@@ -145,7 +146,7 @@ export function GithubIcon() {
   return (
     <Icon>
       <path
-        fill="#E6EDF3"
+        fill="currentColor"
         d="M12 2.1a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0 0 12 2.1z"
       />
     </Icon>
@@ -164,8 +165,8 @@ export function VscodeIcon() {
 export function CursorIcon() {
   return (
     <Icon>
-      <path fill="#E6EDF3" d="m5 4 14 8.1-6.2 1.4-3.2 6.1L5 4z" />
-      <path fill="#2EE6C5" d="m12.8 13.5 3.2 6.1-6.4-7.5z" opacity="0.85" />
+      <path fill="currentColor" d="m5 4 14 8.1-6.2 1.4-3.2 6.1L5 4z" />
+      <path className="icon-accent" fill="currentColor" d="m12.8 13.5 3.2 6.1-6.4-7.5z" opacity="0.85" />
     </Icon>
   )
 }

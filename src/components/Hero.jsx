@@ -40,7 +40,7 @@ function DataIcon() {
 function Hero() {
   return (
     <section id="home" className="section hero">
-      <div className="hero-copy">
+      <div className="hero-copy" data-reveal>
         <div className="hero-status">
           <span className="status-dot"></span>
           <span>AVAILABLE FOR OPPORTUNITIES</span>
@@ -70,9 +70,20 @@ function Hero() {
             </strong>
           </div>
         </div>
+
+        <div className="hero-actions">
+          <a className="btn btn-secondary" href="#contact">
+            Contact Me
+          </a>
+        </div>
       </div>
 
-      <div className="hero-visual" aria-hidden="true">
+      <div
+        className="hero-visual"
+        aria-hidden="true"
+        data-reveal="scale"
+        style={{ '--reveal-delay': '120ms' }}
+      >
         <div className="hero-orbit orbit-one"></div>
         <div className="hero-orbit orbit-two"></div>
         <div className="hero-orbit orbit-three"></div>

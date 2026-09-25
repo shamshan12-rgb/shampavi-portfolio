@@ -6,7 +6,7 @@
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.75;
+    opacity: var(--decor-opacity);
   }
   
   /* Make sure the portfolio content stays above the background */
@@ -15,7 +15,9 @@
     z-index: 1;
   }
   
-  .site-header,
+  /* .site-header is deliberately absent: it owns its own sticky
+     positioning and stacking order in Navbar.css, and restating
+     `position: relative` here would stop it sticking. */
   main,
   .site-footer {
     position: relative;
@@ -31,12 +33,12 @@
     inset: 0;
     background-image:
       linear-gradient(
-        rgba(46, 230, 197, 0.035) 1px,
+        rgba(var(--accent-rgb), 0.035) 1px,
         transparent 1px
       ),
       linear-gradient(
         90deg,
-        rgba(46, 230, 197, 0.035) 1px,
+        rgba(var(--accent-rgb), 0.035) 1px,
         transparent 1px
       );
     background-size: 55px 55px;
@@ -57,7 +59,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(46, 230, 197, 0.3),
+      rgba(var(--accent-rgb), 0.3),
       transparent
     );
     transform-origin: left center;
@@ -96,7 +98,7 @@
     background: var(--accent);
     box-shadow:
       0 0 8px var(--accent),
-      0 0 18px rgba(46, 230, 197, 0.35);
+      0 0 18px rgba(var(--accent-rgb), 0.35);
     animation: data-pulse 3s ease-in-out infinite;
   }
   
@@ -180,7 +182,7 @@
     position: absolute;
     width: 75%;
     height: 180px;
-    border-top: 1px solid rgba(46, 230, 197, 0.14);
+    border-top: 1px solid rgba(var(--accent-rgb), 0.14);
     border-radius: 50%;
     transform: rotate(-8deg);
   }
@@ -208,8 +210,8 @@
     width: 105px;
     height: 70px;
     padding: 10px;
-    border: 1px solid rgba(46, 230, 197, 0.12);
-    background: rgba(8, 15, 22, 0.18);
+    border: 1px solid rgba(var(--accent-rgb), 0.12);
+    background: rgba(var(--glass-rgb), 0.18);
     opacity: 0.5;
   }
   
@@ -217,7 +219,7 @@
     display: block;
     width: 9px;
     border-radius: 2px 2px 0 0;
-    background: rgba(46, 230, 197, 0.35);
+    background: rgba(var(--accent-rgb), 0.35);
   }
   
   .chart-1 {
@@ -283,18 +285,18 @@
     width: 95px;
     height: 95px;
     border-radius: 50%;
-    border: 1px solid rgba(46, 230, 197, 0.2);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
     display: grid;
     place-items: center;
     background:
       radial-gradient(
         circle,
-        rgba(46, 230, 197, 0.08),
+        rgba(var(--accent-rgb), 0.08),
         transparent 65%
       );
     box-shadow:
-      inset 0 0 25px rgba(46, 230, 197, 0.05),
-      0 0 25px rgba(46, 230, 197, 0.05);
+      inset 0 0 25px rgba(var(--accent-rgb), 0.05),
+      0 0 25px rgba(var(--accent-rgb), 0.05);
   }
   
   .data-ring::before {
@@ -304,7 +306,7 @@
     border-radius: 50%;
     border: 2px solid transparent;
     border-top-color: var(--accent);
-    border-right-color: rgba(46, 230, 197, 0.35);
+    border-right-color: rgba(var(--accent-rgb), 0.35);
     transform: rotate(-35deg);
   }
   
@@ -323,7 +325,7 @@
   
   .binary {
     position: absolute;
-    color: rgba(46, 230, 197, 0.28);
+    color: rgba(var(--accent-rgb), 0.28);
     font-family: monospace;
     font-size: 0.7rem;
     letter-spacing: 0.18em;
@@ -365,7 +367,7 @@
     width: 2px;
     height: 2px;
     border-radius: 50%;
-    background: rgba(46, 230, 197, 0.55);
+    background: rgba(var(--accent-rgb), 0.55);
     animation: particle-float 6s ease-in-out infinite;
   }
   

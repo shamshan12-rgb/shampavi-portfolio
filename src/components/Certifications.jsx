@@ -1,3 +1,4 @@
+import { revealDelay } from '../lib/reveal.js'
 import './Certifications.css'
 
 function CertificateIcon() {
@@ -47,11 +48,16 @@ const certifications = [
 function Certifications() {
   return (
     <section id="certifications" className="section certifications-section">
-      <h2 className="certifications-heading">Certifications</h2>
+      <h2 className="certifications-heading" data-reveal>Certifications</h2>
 
       <div className="cert-grid">
-        {certifications.map((item) => (
-          <article key={item.title} className="cert-card">
+        {certifications.map((item, index) => (
+          <article
+            key={item.title}
+            className="cert-card"
+            data-reveal
+            style={revealDelay(index)}
+          >
             <div className="cert-top">
               <span className="cert-icon" aria-hidden="true">
                 <CertificateIcon />

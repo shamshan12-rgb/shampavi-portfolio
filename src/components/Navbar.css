@@ -6,29 +6,30 @@
     position: sticky;
     top: 0;
     z-index: 100;
-  
+
     width: 100%;
-  
-    border-bottom: 1px solid rgba(90, 150, 170, 0.18);
-  
-    background: rgba(7, 15, 22, 0.92);
-  
+
+    border-bottom: 1px solid var(--border-glass);
+
+    background: var(--glass);
+
     backdrop-filter: blur(14px);
   }
-  
+
   .header-inner {
     width: 100%;
-    max-width: 1120px;
-  
-    min-height: 68px;
-  
+    max-width: var(--content-max);
+
+    min-height: calc(var(--header-h) - 1px);
+
     margin: 0 auto;
-    padding: 0 24px;
-  
+    padding: 0 var(--gutter);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-  
+    gap: 1rem;
+
     box-sizing: border-box;
   }
   
@@ -37,22 +38,27 @@
      ========================================================= */
   
   .logo {
-    color: #eaf7f9;
-  
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 44px;
+
+    color: var(--text-h);
+
     text-decoration: none;
-  
+
     font-size: 1.05rem;
     font-weight: 700;
-  
+
     letter-spacing: 0.05em;
-  
+
     white-space: nowrap;
-  
+
     transition: color 0.2s ease;
   }
   
   .logo:hover {
-    color: #20d8c2;
+    color: var(--accent);
   }
   
   /* =========================================================
@@ -61,24 +67,28 @@
   
   .nav-desktop {
     display: flex;
-  
+
     align-items: center;
     justify-content: flex-end;
-  
-    gap: 20px;
-  
+
+    gap: clamp(12px, 1.6vw, 22px);
+
+    min-width: 0;
+
     margin: 0;
     padding: 0;
-  
+
     list-style: none;
   }
-  
+
   .nav-desktop a {
-    display: inline-block;
-  
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 40px;
     padding: 6px 0;
-  
-    color: rgba(205, 220, 226, 0.78);
+
+    color: var(--nav-link);
   
     text-decoration: none;
   
@@ -94,7 +104,7 @@
   
   .nav-desktop a:hover,
   .nav-desktop a.is-active {
-    color: #20d8c2;
+    color: var(--accent);
   
     transform: translateY(-1px);
   }
@@ -106,18 +116,20 @@
   .menu-toggle {
     display: none;
   
-    width: 42px;
-    height: 42px;
-  
+    flex: 0 0 44px;
+
+    width: 44px;
+    height: 44px;
+
     padding: 0;
   
     align-items: center;
     justify-content: center;
   
-    border: 1px solid rgba(90, 150, 170, 0.25);
+    border: 1px solid var(--border-glass-strong);
     border-radius: 9px;
   
-    background: rgba(16, 28, 40, 0.8);
+    background: var(--surface-translucent);
   
     cursor: pointer;
   }
@@ -136,7 +148,7 @@
   
     border-radius: 2px;
   
-    background: #20d8c2;
+    background: var(--accent);
   
     transition:
       transform 0.2s ease,
@@ -180,107 +192,127 @@
      MOBILE NAVIGATION
      ========================================================= */
   
+  /* Anchored to .site-header (a positioned ancestor) rather than the
+     viewport: the header's backdrop-filter makes it the containing block
+     for fixed children anyway, so `absolute` + `top: 100%` is the only
+     way to land reliably just under the bar at every header height. */
   .nav-mobile {
     display: none;
-  
-    position: fixed;
-  
-    top: 68px;
+
+    position: absolute;
+
+    top: 100%;
     left: 0;
     right: 0;
-  
+
     z-index: 90;
-  
+
     flex-direction: column;
-    align-items: center;
-  
-    gap: 20px;
-  
-    padding: 30px 20px;
-  
-    background: rgba(7, 15, 22, 0.98);
-  
-    border-bottom: 1px solid rgba(90, 150, 170, 0.18);
-  
+    align-items: stretch;
+
+    gap: 4px;
+
+    max-height: calc(100svh - var(--header-h));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+
+    padding: 12px var(--gutter) 20px;
+
+    /* Fully opaque: the panel sits directly over hero copy, so any
+       translucency shows through as ghosted text behind the links. */
+    background: var(--surface-solid);
+
+    border-bottom: 1px solid var(--border-glass);
+
+    box-shadow: 0 18px 30px rgba(var(--shadow-rgb), 0.35);
+
     transform: translateY(-10px);
-  
+
     opacity: 0;
-  
+
     visibility: hidden;
-  
+
     pointer-events: none;
-  
+
     transition:
       opacity 0.2s ease,
       transform 0.2s ease,
       visibility 0.2s ease;
   }
-  
+
   .nav-mobile.is-open {
     display: flex;
-  
+
     transform: translateY(0);
-  
+
     opacity: 1;
-  
+
     visibility: visible;
-  
+
     pointer-events: auto;
   }
-  
+
   .nav-mobile a {
-    color: rgba(220, 235, 239, 0.85);
-  
+    display: flex;
+    align-items: center;
+
+    min-height: 48px;
+
+    padding: 0 6px;
+
+    border-radius: 10px;
+
+    color: var(--nav-link);
+
     text-decoration: none;
-  
+
     font-size: 1rem;
     font-weight: 500;
-  
-    transition: color 0.2s ease;
+
+    transition:
+      color 0.2s ease,
+      background 0.2s ease;
   }
-  
+
+  .nav-mobile a + a {
+    border-top: 1px solid var(--border-glass-soft);
+  }
+
   .nav-mobile a:hover,
+  .nav-mobile a:focus-visible,
   .nav-mobile a.is-active {
-    color: #20d8c2;
+    color: var(--accent);
+
+    background: rgba(var(--accent-rgb), 0.07);
   }
   
   /* =========================================================
      TABLET / MOBILE
      ========================================================= */
   
-  @media (max-width: 1080px) {
+  @media (max-width: 900px) {
     .nav-desktop {
       display: none;
     }
-  
+
     .menu-toggle {
       display: flex;
     }
   }
-  
-  @media (min-width: 1081px) {
+
+  @media (min-width: 901px) {
     .nav-mobile {
       display: none !important;
     }
   }
-  
+
   /* =========================================================
      SMALL MOBILE
      ========================================================= */
-  
+
   @media (max-width: 640px) {
-    .header-inner {
-      min-height: 62px;
-  
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-  
     .logo {
       font-size: 0.95rem;
-    }
-  
-    .nav-mobile {
-      top: 62px;
     }
   }

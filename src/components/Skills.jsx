@@ -7,6 +7,7 @@ import {
   PythonIcon,
 } from './skillIcons.jsx'
 
+import { revealDelay } from '../lib/reveal.js'
 import './Skills.css'
 
 const skillCategories = [
@@ -32,17 +33,26 @@ const skillCategories = [
 function Skills() {
   return (
     <section id="skills" className="section skills-section">
-      <h2 className="skills-heading">Skills</h2>
+      <h2 className="skills-heading" data-reveal>Skills</h2>
 
-      {skillCategories.map((category) => (
+      {skillCategories.map((category, categoryIndex) => (
         <div key={category.title} className="skill-category">
-          <h3 className="skill-category-title">
+          <h3
+            className="skill-category-title"
+            data-reveal
+            style={revealDelay(categoryIndex)}
+          >
             {category.title}
           </h3>
 
           <ul className="skill-grid">
-            {category.skills.map(({ name, Icon }) => (
-              <li key={name} className="skill-item">
+            {category.skills.map(({ name, Icon }, skillIndex) => (
+              <li
+                key={name}
+                className="skill-item"
+                data-reveal
+                style={revealDelay(categoryIndex + skillIndex + 1)}
+              >
                 <span className="skill-icon">
                   <Icon />
                 </span>

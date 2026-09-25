@@ -25,8 +25,8 @@
 
 .cert-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(46, 230, 197, 0.45);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+  border-color: rgba(var(--accent-rgb), 0.45);
+  box-shadow: 0 8px 18px rgba(var(--shadow-rgb), 0.28);
 }
 
 .cert-top {
@@ -45,7 +45,7 @@
   flex-shrink: 0;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: #101820;
+  background: var(--surface-inset);
   color: var(--accent);
 }
 
@@ -94,7 +94,9 @@
   font-size: 0.94rem;
 }
 
-@media (max-width: 860px) {
+/* Held at two columns down to 700px: a single 720px-wide card carrying two
+   lines of description leaves the result badge stranded at the far edge. */
+@media (max-width: 700px) {
   .cert-grid {
     grid-template-columns: 1fr;
   }

@@ -7,6 +7,9 @@ export const site = {
   email: "sham12072003shan@gmail.com",
   github: "https://github.com/shamshan12-rgb",
   linkedin:"https://www.linkedin.com/in/shampavi-shanmugarajah-176174369?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+  // Lives in public/, so it ships to the site root and downloads under
+  // this exact filename.
+  cvFile: 'Shampavi-Shanmugarajah-CV.pdf',
   photo: null,
 }
 

@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import { navLinks, site } from '../data/site.js'
+import useTheme from '../hooks/useTheme.js'
+import ThemeToggle from './ThemeToggle.jsx'
 import './Navbar.css'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [theme, toggleTheme] = useTheme()
 
   const closeMenu = () => {
     setIsOpen(false)
@@ -31,6 +34,12 @@ function Navbar() {
               {link.label}
             </a>
           ))}
+
+          <ThemeToggle
+            theme={theme}
+            onToggle={toggleTheme}
+            className="theme-toggle-header"
+          />
         </nav>
 
         {/* Mobile menu button */}
@@ -65,6 +74,12 @@ function Navbar() {
             {link.label}
           </a>
         ))}
+
+        <ThemeToggle
+          theme={theme}
+          onToggle={toggleTheme}
+          className="theme-toggle-inline"
+        />
       </nav>
     </header>
   )

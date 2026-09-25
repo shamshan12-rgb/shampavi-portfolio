@@ -71,10 +71,9 @@ function Contact() {
       id="contact"
       eyebrow="Get in touch"
       title="Let's Connect"
-      s
     >
       <div className="contact-layout">
-        <article className="contact-card">
+        <article className="contact-card" data-reveal style={{ '--reveal-delay': '80ms' }}>
 
           <div className="contact-icon">
             <MailIcon />
@@ -85,10 +84,8 @@ function Contact() {
             <h3>Let's start a conversation</h3>
 
             <p>
-            <p>
-  Open to professional opportunities, collaborations, and meaningful
-  projects where I can contribute, learn, and grow.
-</p>
+              Open to professional opportunities, collaborations, and
+              meaningful projects where I can contribute, learn, and grow.
             </p>
 
             <form
@@ -101,6 +98,7 @@ function Contact() {
                 <input
                   type="text"
                   name="name"
+                  aria-label="Your name"
                   placeholder="Your name"
                   required
                 />
@@ -108,6 +106,7 @@ function Contact() {
                 <input
                   type="email"
                   name="email"
+                  aria-label="Your email"
                   placeholder="Your email"
                   required
                 />
@@ -116,6 +115,7 @@ function Contact() {
 
               <textarea
                 name="message"
+                aria-label="Your message"
                 placeholder="Your message"
                 rows="5"
                 required
