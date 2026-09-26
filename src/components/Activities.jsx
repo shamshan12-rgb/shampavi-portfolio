@@ -7,7 +7,7 @@ const activities = [
     role: 'Youth Forum Alumni Member',
     organization: 'American Corner, Jaffna',
     description:
-      'Actively involved in youth development, community engagement, and leadership activities.',
+      'Engaged in youth development, community initiatives, and leadership activities, collaborating with fellow youth to support meaningful programs, encourage participation, and create positive community impact.',
   },
   {
     number: '02',
@@ -29,7 +29,7 @@ const activities = [
       role: 'IEEE Member',
       organization: 'IEEE Student Branch, University of Vavuniya',
       description:
-        'Actively participate as an IEEE Student Branch member. I also serve as a Secretary Team Member for the Artificial Vertex Project, contributing to project coordination, documentation, communication, and organizational activities.',
+        'Actively participate as an IEEE Student Branch member, engaging in technical, collaborative, and organizational activities while developing my communication, teamwork, and professional skills.',
     }
   ,
   {
